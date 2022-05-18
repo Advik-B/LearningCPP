@@ -4,7 +4,7 @@ import sys
 
 if len(sys.argv) < 2:
     print(
-        """USAGE: 
+        """USAGE:
     %s: file-to-compile
         """ % __file__.split("\\")[-1]
     )
