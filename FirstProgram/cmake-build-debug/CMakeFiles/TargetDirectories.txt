@@ -1,3 +1,0 @@
-E:/Github/LearningCPP/FirstProgram/cmake-build-debug/CMakeFiles/FirstProgram.dir
-E:/Github/LearningCPP/FirstProgram/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/Github/LearningCPP/FirstProgram/cmake-build-debug/CMakeFiles/rebuild_cache.dir
