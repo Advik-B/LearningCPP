@@ -1,8 +1,0 @@
-# ninja log v5
-4	509	6746385269960416	CMakeFiles/CompilerErrors.dir/main.cpp.obj	b6074504c087d956
-510	723	6746385272120403	CompilerErrors.exe	b0f5e560e2434a5
-1	394	6746387267631568	build.ninja	e907e83a68b7630a
-4	426	6746387272731560	CMakeFiles/CompilerErrors.dir/main.cpp.obj	b6074504c087d956
-426	642	6746387274851549	CompilerErrors.exe	b0f5e560e2434a5
-4	542	6746387519549582	CMakeFiles/CompilerErrors.dir/main.cpp.obj	b6074504c087d956
-542	749	6746387521559579	CompilerErrors.exe	b0f5e560e2434a5
