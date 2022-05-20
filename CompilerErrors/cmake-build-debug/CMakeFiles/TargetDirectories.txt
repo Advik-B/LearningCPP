@@ -1,3 +1,0 @@
-E:/Github/LearningCPP/CompilerErrors/cmake-build-debug/CMakeFiles/CompilerErrors.dir
-E:/Github/LearningCPP/CompilerErrors/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/Github/LearningCPP/CompilerErrors/cmake-build-debug/CMakeFiles/rebuild_cache.dir
