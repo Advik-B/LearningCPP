@@ -1,9 +1,0 @@
-# ninja log v5
-0	500	6745989914869896	CMakeFiles/FirstProgram.dir/main.cpp.obj	6e72e3fe74848f2e
-517	747	6745989917309909	FirstProgram.exe	60bc76b5d7b1968b
-3	457	6745990175887255	CMakeFiles/FirstProgram.dir/main.cpp.obj	6e72e3fe74848f2e
-457	674	6745990178057255	FirstProgram.exe	60bc76b5d7b1968b
-4	451	6745991542331445	CMakeFiles/FirstProgram.dir/main.cpp.obj	6e72e3fe74848f2e
-451	659	6745991544391420	FirstProgram.exe	60bc76b5d7b1968b
-4	562	6745992122860234	CMakeFiles/FirstProgram.dir/main.cpp.obj	6e72e3fe74848f2e
-563	763	6745992124840301	FirstProgram.exe	60bc76b5d7b1968b
