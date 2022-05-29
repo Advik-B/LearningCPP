@@ -10,4 +10,4 @@ Thank you [Clion](https://www.jetbrains.com/clion/) you are the best c/c++ ide E
 ## Side notes
 [MDarrays](https://github.com/Advik-B/LearningCPP/tree/main/MDarrays) means multidimensional Arrays
 
-[Vectors](https://github.com/Advik-B/LearningCPP/tree/main/Vectors) are like python lists (kinda) and arrays are python tuples (kinda)
+[Vectors](https://github.com/Advik-B/LearningCPP/tree/main/Vectors) are like python lists (kinda) and [Arrays](https://github.com/Advik-B/LearningCPP/tree/main/Arrays) are python tuples (kinda)
