@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "*.py": "python",
-        ".env": "plaintext",
-        "iostream": "cpp",
-        "ostream": "cpp"
-    }
-}
