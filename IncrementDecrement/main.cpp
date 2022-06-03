@@ -75,7 +75,7 @@ int main()
     else
     {
         cout << "i is not 3 and I got a bit confused?" << endl;
-        // I still got confused, so I'll just do it again
+        // I still got confused
     }
     cout << "..." << endl;
     cout << "Nevermind c++ reads from the right to left" << endl;
