@@ -5,7 +5,7 @@
 
 Thank you [Github Education](https://education.github.com) team for giving free subscription of all the jetbrians products and [EVEN MORE GOODIES](https://education.github.com/pack/offers)
 
-Thank you [Clion](https://www.jetbrains.com/clion/) you are the best c/c++ ide EVER
+Thank you [Clion](https://www.jetbrains.com/clion/) you are the best C/C++ ide EVER
 
 ## Side notes
 [MDarrays](https://github.com/Advik-B/LearningCPP/tree/main/MDarrays) means multidimensional Arrays
