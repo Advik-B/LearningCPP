@@ -14,8 +14,14 @@ int main()
 
 	// For-loop (classic)
 	for (int i{ 0 }; i <= 10; i++) {
-
+		cout << i;
 	};
+	/*
+	* for (variable init; condition; do_at_each_iter)
+	{
+		// do something
+	}
+	*/
 	
 	return 0;
 }
