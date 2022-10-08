@@ -1,3 +1,0 @@
-E:/Github/LearningCPP/RelationalOperators/cmake-build-release-mingw/CMakeFiles/RelationalOperators.dir
-E:/Github/LearningCPP/RelationalOperators/cmake-build-release-mingw/CMakeFiles/edit_cache.dir
-E:/Github/LearningCPP/RelationalOperators/cmake-build-release-mingw/CMakeFiles/rebuild_cache.dir

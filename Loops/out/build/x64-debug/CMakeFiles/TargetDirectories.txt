@@ -1,3 +1,0 @@
-S:/Github/LearningCPP/Loops/out/build/x64-debug/CMakeFiles/Loops.dir
-S:/Github/LearningCPP/Loops/out/build/x64-debug/CMakeFiles/edit_cache.dir
-S:/Github/LearningCPP/Loops/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
