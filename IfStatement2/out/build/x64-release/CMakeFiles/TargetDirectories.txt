@@ -1,3 +1,0 @@
-E:/Github/LearningCPP/IfStatement2/out/build/x64-release/CMakeFiles/IfStatement2.dir
-E:/Github/LearningCPP/IfStatement2/out/build/x64-release/CMakeFiles/edit_cache.dir
-E:/Github/LearningCPP/IfStatement2/out/build/x64-release/CMakeFiles/rebuild_cache.dir
