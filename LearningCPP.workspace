@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="LearningCPP" Database="" Version="10000">
+  <Project Name="SomeTextStuff" Path="SomeTextStuff/SomeTextStuff.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug">
+      <Environment/>
+      <Project Name="SomeTextStuff" ConfigName="Debug"/>
+      <Project Name="SomeTextStuff" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release">
+      <Environment/>
+      <Project Name="SomeTextStuff" ConfigName="Release"/>
+      <Project Name="SomeTextStuff" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>
