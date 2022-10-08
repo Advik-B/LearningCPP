@@ -3,7 +3,8 @@
   <Project Name="SomeTextStuff" Path="SomeTextStuff/SomeTextStuff.project" Active="No"/>
   <Project Name="RangeBased-Assignment" Path="RangeBased-Assignment/RangeBased-Assignment.project" Active="No"/>
   <Project Name="WhileLoop" Path="WhileLoop/WhileLoop.project" Active="No"/>
-  <Project Name="WhileLoop2" Path="WhileLoop2/WhileLoop2.project" Active="Yes"/>
+  <Project Name="WhileLoop2" Path="WhileLoop2/WhileLoop2.project" Active="No"/>
+  <Project Name="WhileLoop3" Path="WhileLoop3/WhileLoop3.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -12,6 +13,7 @@
       <Project Name="RangeBased-Assignment" ConfigName="Debug"/>
       <Project Name="WhileLoop" ConfigName="Debug"/>
       <Project Name="WhileLoop2" ConfigName="Debug"/>
+      <Project Name="WhileLoop3" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -20,6 +22,7 @@
       <Project Name="RangeBased-Assignment" ConfigName="Release"/>
       <Project Name="WhileLoop" ConfigName="Release"/>
       <Project Name="WhileLoop2" ConfigName="Release"/>
+      <Project Name="WhileLoop3" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
