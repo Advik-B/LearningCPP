@@ -37,7 +37,7 @@ int main()
     string tmp;
     print_list(todo);
     do {
-        cout << "[ SELECTION ]: ";
+        cout << "→ ";
         cin >> selection;
         // make sure the selection is a number, if not, clear the input buffer and make the selection 0
         if (cin.fail()) {
