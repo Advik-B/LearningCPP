@@ -1,9 +1,0 @@
--IS:\Github\LearningCPP\WhileLoop3
--ID:\Programs\VisualStudio2022\VC\Tools\MSVC\14.33.31629\include
--ID:\Programs\VisualStudio2022\VC\Tools\MSVC\14.33.31629\ATLMFC\include
--ID:\Programs\VisualStudio2022\VC\Auxiliary\VS\include
--ID:\Windows Kits\10\include\10.0.22621.0\ucrt
--ID:\Windows Kits\10\include\10.0.22621.0\um
--ID:\Windows Kits\10\include\10.0.22621.0\shared
--ID:\Windows Kits\10\include\10.0.22621.0\winrt
--ID:\Windows Kits\10\include\10.0.22621.0\cppwinrt
