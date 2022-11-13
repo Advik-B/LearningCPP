@@ -58,5 +58,6 @@ int main()
     }
     while (not satisfied);
     cout << "You selected: " << todo[selection - 1] << endl;
+    cout << "Goodbye!" << endl;
     return 0;
 }
