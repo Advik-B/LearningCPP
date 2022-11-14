@@ -63,7 +63,7 @@ class MainUI : public QWidget
         setLayout(layout);
         }
 
-        
+
 };
 
 int main(int argc, char *argv[])
