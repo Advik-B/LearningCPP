@@ -4,10 +4,12 @@
 // GUI library
 #include <QApplication>
 #include <QWidget>
-#include <QLabel>
-#include <QFont>
-#include <QFontDatabase>
-#include <QFormLayout>
+#include <QGridLayout>
+#include <QMenuBar>
+#include <QMenu>
+#include <QAction>
+#include <QIcon>
+#include <QScreen>
 
 using namespace std;
 // Print function takes an infinite number of arguments (strings) and prints them to the console separated by a space
@@ -33,34 +35,42 @@ void print(string s, ...)
     cout << endl;
 }
 
+QSize GetScreenSize(QApplication &application)
+{
+    // Get the screen size
+    QSize screenSize = QApplication::primaryScreen()->size();
+    // Return the screen size
+    return screenSize;
+}
+
 class MainUI : public QWidget
 {
     public:
         MainUI() {
-        // Set the window title
-        setWindowTitle("Main UI");
-        // Set the window size
-        resize(400, 300);
-        // Create a label
-        QLabel *label = new QLabel("Hello World!");
-        // Create a font
-        QFont font;
-        // Set the font family
-        font.setFamily("Arial");
-        // Set the font size
-        font.setPointSize(24);
-        // Set the font weight
-        font.setWeight(QFont::Bold);
-        // Set the font style
-        font.setStyle(QFont::StyleItalic);
-        // Set the font
-        label->setFont(font);
-        // Create a form layout
-        auto *layout = new QFormLayout;
-        // Add the label to the layout
-        layout->addRow(label);
-        // Set the layout
+        auto layout = new QGridLayout;
+        auto menuBar = new QMenuBar;
+        auto fileMenu = new QMenu("File");
+        auto editMenu = new QMenu("Edit");
+        auto viewMenu = new QMenu("View");
+        auto helpMenu = new QMenu("Help");
+
+        menuBar->addMenu(fileMenu);
+        menuBar->addMenu(editMenu);
+        menuBar->addMenu(viewMenu);
+        menuBar->addMenu(helpMenu);
+
+        layout->setMenuBar(menuBar);
+
         setLayout(layout);
+        auto screenSize = GetScreenSize(*qApp);
+        auto width = screenSize.width();
+        auto height = screenSize.height();
+        resize(width / 2, height / 2);
+
+        // Create the widgets
+        auto icon = QIcon("/Users/advik/Documents/GitHub/LearningCPP/Qt++/icon.png");
+        setWindowIcon(icon);
+        setWindowIconText("ToDo List App");
         }
 
 
