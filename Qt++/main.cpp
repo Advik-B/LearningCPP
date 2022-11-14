@@ -1,8 +1,15 @@
 #include <iostream>
 #include <string>
+
+// GUI library
+#include <QApplication>
+#include <QWidget>
+#include <QLabel>
+#include <QFont>
+#include <QFontDatabase>
+#include <QFormLayout>
+
 using namespace std;
-
-
 // Print function takes an infinite number of arguments (strings) and prints them to the console separated by a space
 void print(string s, ...)
 {
@@ -25,3 +32,35 @@ void print(string s, ...)
     // Print a new line
     cout << endl;
 }
+
+class MainUI : public QWidget
+{
+public:
+    MainUI()
+    {
+        // Set the window title
+        setWindowTitle("Main UI");
+        // Set the window size
+        setFixedSize(400, 300);
+        // Create a label
+        QLabel *label = new QLabel("Hello World!");
+        // Create a font
+        QFont font;
+        // Set the font family
+        font.setFamily("Arial");
+        // Set the font size
+        font.setPointSize(24);
+        // Set the font weight
+        font.setWeight(QFont::Bold);
+        // Set the font style
+        font.setStyle(QFont::StyleItalic);
+        // Set the font
+        label->setFont(font);
+        // Create a form layout
+        auto *layout = new QFormLayout;
+        // Add the label to the layout
+        layout->addRow(label);
+        // Set the layout
+        setLayout(layout);
+    }
+};
