@@ -10,6 +10,9 @@
 #include <QAction>
 #include <QIcon>
 #include <QScreen>
+#include <QLabel>
+#include <QPixmap>
+#include <QtGui>
 
 using namespace std;
 // Print function takes an infinite number of arguments (strings) and prints them to the console separated by a space
@@ -54,12 +57,20 @@ class MainUI : public QWidget
         auto viewMenu = new QMenu("View");
         auto helpMenu = new QMenu("Help");
 
+        auto background = new QLabel;
+        auto backgroundPixmap = new QPixmap("/Users/advik/Documents/GitHub/LearningCPP/Qt++/wallpapers/palmtrees.jpg");
+        auto backgroundImage= backgroundPixmap->scaled(400, 300, Qt::KeepAspectRatioByExpanding);
+        free(backgroundPixmap);
+        background->setPixmap(backgroundImage);
+
+
         menuBar->addMenu(fileMenu);
         menuBar->addMenu(editMenu);
         menuBar->addMenu(viewMenu);
         menuBar->addMenu(helpMenu);
 
         layout->setMenuBar(menuBar);
+        layout->addWidget(background);
 
         setLayout(layout);
         auto screenSize = GetScreenSize(*qApp);
@@ -78,6 +89,7 @@ class MainUI : public QWidget
 
 int main(int argc, char *argv[])
 {
+    QImageReader::setAllocationLimit(0);
     // Create a Qt application
     QApplication app(argc, argv);
     // Create a main UI
