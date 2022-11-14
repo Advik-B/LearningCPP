@@ -35,13 +35,12 @@ void print(string s, ...)
 
 class MainUI : public QWidget
 {
-public:
-    MainUI()
-    {
+    public:
+        MainUI() {
         // Set the window title
         setWindowTitle("Main UI");
         // Set the window size
-        setFixedSize(400, 300);
+        resize(400, 300);
         // Create a label
         QLabel *label = new QLabel("Hello World!");
         // Create a font
@@ -62,5 +61,19 @@ public:
         layout->addRow(label);
         // Set the layout
         setLayout(layout);
-    }
+        }
+
+        
 };
+
+int main(int argc, char *argv[])
+{
+    // Create a Qt application
+    QApplication app(argc, argv);
+    // Create a main UI
+    MainUI mainUI;
+    // Show the main UI
+    mainUI.show();
+    // Run the Qt application
+    return QApplication::exec();
+}
