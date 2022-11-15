@@ -15,28 +15,7 @@
 #include <QtGui>
 
 using namespace std;
-// Print function takes an infinite number of arguments (strings) and prints them to the console separated by a space
-void print(string s, ...)
-{
-    // Create a variable argument list
-    va_list args;
-    // Initialize the variable argument list
-    va_start(args, s);
-    // Print the first string
-    cout << s;
-    // Loop through the rest of the strings
-    while (!s.empty())
-    {
-        // Get the next string (without va_arg)
-        s = va_arg(args, char*);
-        // Print the string
-        cout << " " << s;
-    }
-    // End the variable argument list
-    va_end(args);
-    // Print a new line
-    cout << endl;
-}
+
 
 QSize GetScreenSize(QApplication &application)
 {
@@ -57,12 +36,6 @@ class MainUI : public QWidget
         auto viewMenu = new QMenu("View");
         auto helpMenu = new QMenu("Help");
 
-        auto background = new QLabel;
-        auto backgroundPixmap = new QPixmap("/Users/advik/Documents/GitHub/LearningCPP/Qt++/wallpapers/palmtrees.jpg");
-        auto backgroundImage= backgroundPixmap->scaled(400, 300, Qt::KeepAspectRatioByExpanding);
-        free(backgroundPixmap);
-        background->setPixmap(backgroundImage);
-
 
         menuBar->addMenu(fileMenu);
         menuBar->addMenu(editMenu);
@@ -70,7 +43,6 @@ class MainUI : public QWidget
         menuBar->addMenu(helpMenu);
 
         layout->setMenuBar(menuBar);
-        layout->addWidget(background);
 
         setLayout(layout);
         auto screenSize = GetScreenSize(*qApp);
@@ -78,9 +50,8 @@ class MainUI : public QWidget
         auto height = screenSize.height();
         resize(width / 2, height / 2);
 
-        // Create the widgets
-        auto icon = QIcon("/Users/advik/Documents/GitHub/LearningCPP/Qt++/icon.png");
-        setWindowIcon(icon);
+//        auto icon = QIcon("~/Documents/GitHub/LearningCPP/Qt++/icon.png");
+//        setWindowIcon(icon);
         setWindowIconText("ToDo List App");
         }
 
