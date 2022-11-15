@@ -25,7 +25,8 @@ QSize GetScreenSize(QApplication &application)
     return screenSize;
 }
 
-void print(string &text, char end = ' ', bool newLine = true, bool flush = false)
+template <typename str>
+void print(str &text, char end = ' ', bool newLine = true, bool flush = false)
 {
     // Print the text
     cout << text;
@@ -71,6 +72,7 @@ class MainUI : public QWidget
 //        auto icon = QIcon("~/Documents/GitHub/LearningCPP/Qt++/icon.png");
 //        setWindowIcon(icon);
         setWindowIconText("ToDo List App");
+        print("Window icon text: ");
         }
 
 
