@@ -13,6 +13,7 @@
 #include <QLabel>
 #include <QPixmap>
 #include <QtGui>
+#include <QMessageBox>
 
 using namespace std;
 
@@ -134,8 +135,30 @@ class MainUI : public QWidget
         // Actions
         // File -> New_Todo
         auto newTodoAction = new QAction("New Todo");
+        auto submitBugAction = new QAction("Submit a bug");
+        auto submitFeatureAction = new QAction("Suggest a feature");
+        auto aboutAction = new QAction("About");
+        auto exitAction = new QAction("Exit");
+
+
         newTodoAction->setIcon(QIcon("icons/new.png"));
+        submitBugAction->setIcon(QIcon("icons/bug.png"));
+        submitFeatureAction->setIcon(QIcon("icons/feature.png"));
+        aboutAction->setIcon(QIcon("icons/about.png"));
+        exitAction->setIcon(QIcon("icons/exit.png"));
+
+        aboutAction->setShortcut(QKeySequence::HelpContents);
+        exitAction->setShortcut(QKeySequence::Quit);
+
+        // Trigger the about action
+        connect(aboutAction, &QAction::triggered, this, &MainUI::about);
+        connect(submitBugAction, &QAction::triggered, this, &MainUI::about);
+
         fileMenu->addAction(newTodoAction);
+        helpMenu->addAction(submitBugAction);
+        helpMenu->addAction(submitFeatureAction);
+        helpMenu->addAction(aboutAction);
+        fileMenu->addAction(exitAction);
 
         layout->setMenuBar(menuBar);
 
@@ -151,8 +174,16 @@ class MainUI : public QWidget
 //        auto icon = QIcon("~/Documents/GitHub/LearningCPP/Qt++/icon.png");
 //        setWindowIcon(icon);
         setWindowTitle("ToDo App");
+        setFixedSize(size());
         }
-
+        static void about()
+        {
+            auto about = new QMessageBox;
+            about->setWindowTitle("About");
+            about->setText("This is a simple ToDo app made with Qt");
+            about->setStandardButtons(QMessageBox::Ok);
+            about->exec();
+        }
 
 };
 
