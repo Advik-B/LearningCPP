@@ -43,6 +43,59 @@ void print(str &text, char end = ' ', bool newLine = true, bool flush = false)
         cout.flush();
     }
 }
+void print(char *text, char end = ' ', bool newLine = true, bool flush = false)
+{
+    // Print the text
+    cout << text;
+    // Check if a new line is needed
+    if (newLine)
+    {
+        // Print a new line
+        cout << end;
+    }
+    // Check if the buffer should be flushed
+    if (flush)
+    {
+        // Flush the buffer
+        cout.flush();
+    }
+}
+void print(int text, char end = ' ', bool newLine = true, bool flush = false)
+{
+    // Print the text
+    cout << text;
+    // Check if a new line is needed
+    if (newLine)
+    {
+        // Print a new line
+        cout << end;
+    }
+    // Check if the buffer should be flushed
+    if (flush)
+    {
+        // Flush the buffer
+        cout.flush();
+    }
+}
+void print(bool text, char end = ' ', bool newLine = true, bool flush = false)
+{
+    // Print the text
+    cout << boolalpha;
+    cout << text;
+    cout << noboolalpha;
+    // Check if a new line is needed
+    if (newLine)
+    {
+        // Print a new line
+        cout << end;
+    }
+    // Check if the buffer should be flushed
+    if (flush)
+    {
+        // Flush the buffer
+        cout.flush();
+    }
+}
 
 class MainUI : public QWidget
 {
@@ -72,7 +125,7 @@ class MainUI : public QWidget
 //        auto icon = QIcon("~/Documents/GitHub/LearningCPP/Qt++/icon.png");
 //        setWindowIcon(icon);
         setWindowIconText("ToDo List App");
-        print("Window icon text: ");
+        print(1);
         }
 
 
