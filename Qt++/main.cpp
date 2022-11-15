@@ -17,7 +17,7 @@
 using namespace std;
 
 
-QSize GetScreenSize(QApplication &application)
+QSize GetScreenSize()
 {
     // Get the screen size
     QSize screenSize = QApplication::primaryScreen()->size();
@@ -26,7 +26,7 @@ QSize GetScreenSize(QApplication &application)
 }
 
 template <typename str>
-void print(str &text, char end = ' ', bool newLine = true, bool flush = false)
+void print(str &text, char end = '\n', bool newLine = true, bool flush = false)
 {
     // Print the text
     cout << text;
@@ -43,7 +43,7 @@ void print(str &text, char end = ' ', bool newLine = true, bool flush = false)
         cout.flush();
     }
 }
-void print(char *text, char end = ' ', bool newLine = true, bool flush = false)
+void print(const basic_string<char, char_traits<char>, allocator<char>>& text, char end = '\n', bool newLine = true, bool flush = false)
 {
     // Print the text
     cout << text;
@@ -60,7 +60,7 @@ void print(char *text, char end = ' ', bool newLine = true, bool flush = false)
         cout.flush();
     }
 }
-void print(int text, char end = ' ', bool newLine = true, bool flush = false)
+void print(int text, char end = '\n', bool newLine = true, bool flush = false)
 {
     // Print the text
     cout << text;
@@ -77,12 +77,29 @@ void print(int text, char end = ' ', bool newLine = true, bool flush = false)
         cout.flush();
     }
 }
-void print(bool text, char end = ' ', bool newLine = true, bool flush = false)
+void print(bool text, char end = '\n', bool newLine = true, bool flush = false)
 {
     // Print the text
     cout << boolalpha;
     cout << text;
     cout << noboolalpha;
+    // Check if a new line is needed
+    if (newLine)
+    {
+        // Print a new line
+        cout << end;
+    }
+    // Check if the buffer should be flushed
+    if (flush)
+    {
+        // Flush the buffer
+        cout.flush();
+    }
+}
+void print(string &text, char end = '\n', bool newLine = true, bool flush = false)
+{
+    // Print the text
+    cout << text;
     // Check if a new line is needed
     if (newLine)
     {
@@ -114,18 +131,26 @@ class MainUI : public QWidget
         menuBar->addMenu(viewMenu);
         menuBar->addMenu(helpMenu);
 
+        // Actions
+        // File -> New_Todo
+        auto newTodoAction = new QAction("New Todo");
+        newTodoAction->setIcon(QIcon("icons/new.png"));
+        fileMenu->addAction(newTodoAction);
+
         layout->setMenuBar(menuBar);
 
         setLayout(layout);
-        auto screenSize = GetScreenSize(*qApp);
+        auto screenSize = GetScreenSize();
         auto width = screenSize.width();
         auto height = screenSize.height();
-        resize(width / 2, height / 2);
+        int divider { 2 };
+        print("Screen size: " + to_string(width) + "x" + to_string(height));
+        print("Window size: " + to_string(width / divider) + "x" + to_string(height / divider));
+        resize(width / divider, height / divider);
 
 //        auto icon = QIcon("~/Documents/GitHub/LearningCPP/Qt++/icon.png");
 //        setWindowIcon(icon);
-        setWindowIconText("ToDo List App");
-        print(1);
+        setWindowTitle("ToDo App");
         }
 
 
