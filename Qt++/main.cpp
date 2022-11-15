@@ -25,6 +25,24 @@ QSize GetScreenSize(QApplication &application)
     return screenSize;
 }
 
+void print(string &text, char end = ' ', bool newLine = true, bool flush = false)
+{
+    // Print the text
+    cout << text;
+    // Check if a new line is needed
+    if (newLine)
+    {
+        // Print a new line
+        cout << end;
+    }
+    // Check if the buffer should be flushed
+    if (flush)
+    {
+        // Flush the buffer
+        cout.flush();
+    }
+}
+
 class MainUI : public QWidget
 {
     public:
