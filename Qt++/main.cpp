@@ -11,9 +11,10 @@
 #include <QIcon>
 #include <QScreen>
 #include <QLabel>
-#include <QPixmap>
+#include <QFontComboBox>
 #include <QtGui>
 #include <QMessageBox>
+#include <QSpinBox>
 
 using namespace std;
 
@@ -120,48 +121,6 @@ class MainUI : public QWidget
     public:
         MainUI() {
         auto layout = new QGridLayout;
-        auto menuBar = new QMenuBar;
-        auto fileMenu = new QMenu("File");
-        auto editMenu = new QMenu("Edit");
-        auto viewMenu = new QMenu("View");
-        auto helpMenu = new QMenu("Help");
-
-
-        menuBar->addMenu(fileMenu);
-        menuBar->addMenu(editMenu);
-        menuBar->addMenu(viewMenu);
-        menuBar->addMenu(helpMenu);
-
-        // Actions
-        // File -> New_Todo
-        auto newTodoAction = new QAction("New Todo");
-        auto submitBugAction = new QAction("Submit a bug");
-        auto submitFeatureAction = new QAction("Suggest a feature");
-        auto aboutAction = new QAction("About");
-        auto exitAction = new QAction("Exit");
-
-
-        newTodoAction->setIcon(QIcon("icons/new.png"));
-        submitBugAction->setIcon(QIcon("icons/bug.png"));
-        submitFeatureAction->setIcon(QIcon("icons/feature.png"));
-        aboutAction->setIcon(QIcon("icons/about.png"));
-        exitAction->setIcon(QIcon("icons/exit.png"));
-
-        aboutAction->setShortcut(QKeySequence::HelpContents);
-        exitAction->setShortcut(QKeySequence::Quit);
-
-        // Trigger the about action
-        connect(aboutAction, &QAction::triggered, this, &MainUI::about);
-        connect(submitBugAction, &QAction::triggered, this, &MainUI::about);
-
-        fileMenu->addAction(newTodoAction);
-        helpMenu->addAction(submitBugAction);
-        helpMenu->addAction(submitFeatureAction);
-        helpMenu->addAction(aboutAction);
-        fileMenu->addAction(exitAction);
-
-        layout->setMenuBar(menuBar);
-
         setLayout(layout);
         auto screenSize = GetScreenSize();
         auto width = screenSize.width();
@@ -171,10 +130,77 @@ class MainUI : public QWidget
         print("Window size: " + to_string(width / divider) + "x" + to_string(height / divider));
         resize(width / divider, height / divider);
 
-//        auto icon = QIcon("~/Documents/GitHub/LearningCPP/Qt++/icon.png");
-//        setWindowIcon(icon);
         setWindowTitle("ToDo App");
+        auto menuBar = new QMenuBar;
+        auto fileMenu = new QMenu("File");
+        auto editMenu = new QMenu("Edit");
+        auto helpMenu = new QMenu("Help");
+        auto viewMenu = new QMenu("View");
+
+        auto newAction = new QAction("New");
+        auto openAction = new QAction("Open");
+        auto saveAction = new QAction("Save");
+        auto saveAsAction = new QAction("Save As");
+        auto exitAction = new QAction("Exit");
+
+        fileMenu->addAction(newAction);
+        fileMenu->addAction(openAction);
+        fileMenu->addAction(saveAction);
+        fileMenu->addAction(saveAsAction);
+        fileMenu->addSeparator();
+        fileMenu->addAction(exitAction);
+
+        auto undoAction = new QAction("Undo");
+        auto redoAction = new QAction("Redo");
+        auto cutAction = new QAction("Cut");
+        auto copyAction = new QAction("Copy");
+        auto pasteAction = new QAction("Paste");
+        auto deleteAction = new QAction("Delete");
+        auto selectAllAction = new QAction("Select All");
+
+        editMenu->addAction(undoAction);
+        editMenu->addAction(redoAction);
+        editMenu->addSeparator();
+        editMenu->addAction(cutAction);
+        editMenu->addAction(copyAction);
+        editMenu->addAction(pasteAction);
+        editMenu->addAction(deleteAction);
+        editMenu->addSeparator();
+        editMenu->addAction(selectAllAction);
+
+        auto aboutAction = new QAction("About");
+        auto aboutQtAction = new QAction("About Qt");
+
+        helpMenu->addAction(aboutAction);
+        helpMenu->addAction(aboutQtAction);
+
+        auto fullScreenAction = new QAction("Full Screen");
+        auto minimizeAction = new QAction("Minimize");
+        auto maximizeAction = new QAction("Maximize");
+        auto setFontSizeAction = new QAction("Set Font Size");
+
+        viewMenu->addAction(fullScreenAction);
+        viewMenu->addAction(minimizeAction);
+        viewMenu->addAction(maximizeAction);
+        viewMenu->addSeparator();
+        viewMenu->addAction(setFontSizeAction);
+
+
+        menuBar->addMenu(fileMenu);
+        menuBar->addMenu(editMenu);
+        menuBar->addMenu(helpMenu);
+        menuBar->addMenu(viewMenu);
+
         setFixedSize(size());
+        connect(exitAction, &QAction::triggered, this, &QWidget::close);
+        connect(aboutQtAction, &QAction::triggered, this, &MainUI::aboutQt_);
+        connect(aboutAction, &QAction::triggered, this, &MainUI::about);
+//        connect(fullScreenAction, &QAction::triggered, this, &MainUI::fullScreen_);
+//        connect(minimizeAction, &QAction::triggered, this, &MainUI::minimize_);
+//        connect(maximizeAction, &QAction::triggered, this, &MainUI::maximize_);
+        connect(setFontSizeAction, &QAction::triggered, this, &MainUI::setFontSize);
+
+
         }
         static void about()
         {
@@ -183,6 +209,24 @@ class MainUI : public QWidget
             about->setText("This is a simple ToDo app made with Qt");
             about->setStandardButtons(QMessageBox::Ok);
             about->exec();
+        }
+
+        static void aboutQt_()
+        {
+            QMessageBox().aboutQt(nullptr, "About Qt");
+        }
+
+        static void setFontSize()
+        {
+            auto fontSize = new QMessageBox;
+            fontSize->setWindowTitle("Set Font Size");
+            auto fontComboBox = new QFontComboBox(nullptr);
+            auto fontSpinBox = new QSpinBox(nullptr);
+            fontSpinBox->setRange(1, 100);
+
+            fontSize->layout()->addItem(reinterpret_cast<QLayoutItem *>(fontComboBox));
+            fontSize->setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+            fontSize->exec();
         }
 
 };
