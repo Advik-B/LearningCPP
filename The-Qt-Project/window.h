@@ -3,7 +3,8 @@
 class MainWindow : public QMainWindow
 {
     public:
-        MainWindow() {
+        MainWindow()
+        {
             setWindowTitle("Hello Window-Title");
         };
 };
