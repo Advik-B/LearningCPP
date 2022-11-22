@@ -42,7 +42,7 @@ namespace util_io {
         if (flush) cout.flush();
     }
 
-    void FileWrite(string &filename, string &text) {
+    void FileWrite(const char *filename, const char *text) {
         ofstream file;
         file.open(filename);
         file << text;
