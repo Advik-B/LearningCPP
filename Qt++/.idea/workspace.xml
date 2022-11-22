@@ -20,6 +20,8 @@
   <component name="ChangeListManager">
     <list default="true" id="08b3feeb-c9bd-4e32-b403-cc4edcec8efe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-release/.cmake/api/v1/reply/index-2022-11-14T16-42-24-0080.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-release/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-release/build.ninja" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +38,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file:///opt/homebrew/lib/QtWidgets.framework/Headers/qmessagebox.h" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -105,6 +110,10 @@
       <workItem from="1668511536796" duration="3426000" />
       <workItem from="1668780186942" duration="1587000" />
       <workItem from="1668782431458" duration="2000" />
+      <workItem from="1668914118631" duration="857000" />
+      <workItem from="1668914998924" duration="1347000" />
+      <workItem from="1668921450366" duration="195000" />
+      <workItem from="1669024126314" duration="21000" />
     </task>
     <servers />
   </component>

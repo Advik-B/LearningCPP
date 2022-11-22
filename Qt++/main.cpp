@@ -8,16 +8,16 @@
 #include <QMenuBar>
 #include <QMenu>
 #include <QAction>
-#include <QIcon>
-#include <QScreen>
-#include <QLabel>
 #include <QFontComboBox>
 #include <QtGui>
 #include <QMessageBox>
-#include <QSpinBox>
+#include <QFontDialog>
+#include <QFileDialog>
+#include <QPlainTextEdit>
 
 using namespace std;
 
+QFont globalFont("Arial", 12);
 
 QSize GetScreenSize()
 {
@@ -177,7 +177,7 @@ class MainUI : public QWidget
         auto fullScreenAction = new QAction("Full Screen");
         auto minimizeAction = new QAction("Minimize");
         auto maximizeAction = new QAction("Maximize");
-        auto setFontSizeAction = new QAction("Set Font Size");
+        auto setFontSizeAction = new QAction("Set Font");
 
         viewMenu->addAction(fullScreenAction);
         viewMenu->addAction(minimizeAction);
@@ -198,8 +198,12 @@ class MainUI : public QWidget
 //        connect(fullScreenAction, &QAction::triggered, this, &MainUI::fullScreen_);
 //        connect(minimizeAction, &QAction::triggered, this, &MainUI::minimize_);
 //        connect(maximizeAction, &QAction::triggered, this, &MainUI::maximize_);
-        connect(setFontSizeAction, &QAction::triggered, this, &MainUI::setFontSize);
+        auto textBox = new QTextEdit(nullptr);
+        textBox->setFont(globalFont);
 
+
+        connect(setFontSizeAction, &QAction::triggered, this, &MainUI::changeFont);
+        layout->addWidget(textBox, 0, 0, 1, 1);
 
         }
         static void about()
@@ -216,17 +220,13 @@ class MainUI : public QWidget
             QMessageBox().aboutQt(nullptr, "About Qt");
         }
 
-        static void setFontSize()
+        void changeFont()
         {
-            auto fontSize = new QMessageBox;
-            fontSize->setWindowTitle("Set Font Size");
-            auto fontComboBox = new QFontComboBox(nullptr);
-            auto fontSpinBox = new QSpinBox(nullptr);
-            fontSpinBox->setRange(1, 100);
-
-            fontSize->layout()->addItem(reinterpret_cast<QLayoutItem *>(fontComboBox));
-            fontSize->setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
-            fontSize->exec();
+            auto fontDialog = new QFontDialog;
+            fontDialog->setCurrentFont(globalFont);
+            fontDialog->exec();
+            globalFont = fontDialog->currentFont();
+            print("Font changed to: " + globalFont.family().toStdString());
         }
 
 };
