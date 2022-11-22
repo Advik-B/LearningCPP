@@ -268,7 +268,15 @@
 	"CMAKE_SOURCE_DIR" : "/Users/advik/Documents/GitHub/LearningCPP/Qt++",
 	"DEP_FILE" : "/Users/advik/Documents/GitHub/LearningCPP/Qt++/cmake-build-release/QtApp_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "QtApp_autogen/timestamp",
-	"HEADERS" : [],
+	"HEADERS" : 
+	[
+		[
+			"/Users/advik/Documents/GitHub/LearningCPP/Qt++/menuBar.h",
+			"MU",
+			"EWIEGA46WW/moc_menuBar.cpp",
+			null
+		]
+	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "/Users/advik/Documents/GitHub/LearningCPP/Qt++/cmake-build-release/QtApp_autogen/include",
 	"MOC_COMPILATION_FILE" : "/Users/advik/Documents/GitHub/LearningCPP/Qt++/cmake-build-release/QtApp_autogen/mocs_compilation.cpp",
