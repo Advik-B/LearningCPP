@@ -134,7 +134,7 @@ build QtApp_autogen/timestamp QtApp_autogen/mocs_compilation.cpp | ${cmake_ninja
 #############################################
 # Phony custom command for CMakeFiles/QtApp_autogen_timestamp_deps
 
-build CMakeFiles/QtApp_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/QtApp_autogen_timestamp_deps: phony /opt/homebrew/share/qt/libexec/uic /opt/homebrew/share/qt/libexec/moc
+build CMakeFiles/QtApp_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/QtApp_autogen_timestamp_deps: phony /opt/homebrew/share/qt/libexec/moc /opt/homebrew/share/qt/libexec/uic
 
 
 #############################################
