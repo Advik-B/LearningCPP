@@ -13,7 +13,7 @@ find_package(Qt6 COMPONENTS
         Widgets
         REQUIRED)
 
-add_executable(QtApp main.cpp)
+add_executable(QtApp main.cpp menuBar.h)
 target_link_libraries(QtApp
         Qt::Core
         Qt::Gui
