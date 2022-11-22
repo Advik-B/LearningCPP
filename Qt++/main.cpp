@@ -12,7 +12,15 @@ class MainUI : public QMainWindow
             resize(400, 300);
 
             auto menuBar = new MenuBar();
+            menuBar->setParent(this);
+
+            fileActionTriggered();
             setMenuBar(menuBar);
+        }
+
+        void fileActionTriggered()
+        {
+            qDebug() << "File action triggered";
         }
 };
 
