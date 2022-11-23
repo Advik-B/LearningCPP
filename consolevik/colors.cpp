@@ -4,6 +4,7 @@
 
 using std::string;
 
+
 void test()
 {
     #include <iostream>
