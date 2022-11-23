@@ -6,21 +6,13 @@ using std::string;
 
 void test()
 {
-    // Create a stream so that we can capture the output
-    std::stringstream ss;
-    std::streambuf* old = std::cout.rdbuf(ss.rdbuf());
+    #include <iostream>
 
-    // Print some text in different colors
-    ss << termcolor::red << "red text" << termcolor::reset << std::endl;
-    ss << termcolor::green << "green text" << termcolor::reset << std::endl;
-    ss << termcolor::blue << "blue text" << termcolor::reset << std::endl;
-    ss << termcolor::yellow << "yellow text" << termcolor::reset << std::endl;
-    ss << termcolor::magenta << "magenta text" << termcolor::reset << std::endl;
+    using namespace std;
+    using namespace termcolor;
 
-    // Restore the original stream buffer
-    std::cout.rdbuf(old);
-
-
+    cout << "Hello, world!" << endl;
+    cout << "Hello, " << red << "world!" << reset << endl;
 }
 
 int main()
