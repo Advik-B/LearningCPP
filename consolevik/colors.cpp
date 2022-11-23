@@ -1,13 +1,30 @@
-#include "termcolor/termcolor.hpp"
+#include <termcolor/termcolor.hpp>
+#include <string>
+#include <sstream>
+
+using std::string;
+
+void test()
+{
+    // Create a stream so that we can capture the output
+    std::stringstream ss;
+    std::streambuf* old = std::cout.rdbuf(ss.rdbuf());
+
+    // Print some text in different colors
+    ss << termcolor::red << "red text" << termcolor::reset << std::endl;
+    ss << termcolor::green << "green text" << termcolor::reset << std::endl;
+    ss << termcolor::blue << "blue text" << termcolor::reset << std::endl;
+    ss << termcolor::yellow << "yellow text" << termcolor::reset << std::endl;
+    ss << termcolor::magenta << "magenta text" << termcolor::reset << std::endl;
+
+    // Restore the original stream buffer
+    std::cout.rdbuf(old);
+
+
+}
 
 int main()
 {
-    std::cout << termcolor::red << "Hello, World!" << std::endl;
-    std::cout << termcolor::green << "Hello, World!" << std::endl;
-    std::cout << termcolor::blue << "Hello, World!" << std::endl;
-    std::cout << termcolor::yellow << "Hello, World!" << std::endl;
-    std::cout << termcolor::magenta << "Hello, World!" << std::endl;
-    std::cout << termcolor::cyan << "Hello, World!" << std::endl;
-    std::cout << termcolor::white << "Hello, World!" << std::endl;
-    std::cout << termcolor::reset << "Hello, World!" << std::endl;
+    test();
+    return 0;
 }
