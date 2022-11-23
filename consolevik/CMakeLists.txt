@@ -3,5 +3,5 @@ project(consolevik)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_library(consolevik SHARED color-util.cpp)
+add_library(consolevik SHARED colors.cpp)
 add_executable(consolevik-test Test.cpp)
