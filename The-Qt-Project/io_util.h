@@ -69,4 +69,5 @@ namespace util_io {
         BinaryFile file(filename);
         return file.Read();
     }
+
 }
