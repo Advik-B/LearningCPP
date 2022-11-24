@@ -6,9 +6,9 @@
 #include <iostream>
 
 using namespace std;
-using namespace colors;
 int main()
 {
-    cout << dye("Hello World", "red") << endl;
+    cout << colors::dye("Hello World", "red") << endl;
+    cout << effects::add_effect("Hello World", "bold") << endl;
     return 0;
 }
