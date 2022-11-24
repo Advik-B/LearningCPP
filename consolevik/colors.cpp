@@ -3,7 +3,7 @@
 
 
 namespace colors {
-    
+
     using std::string;
 
     const string RED = "\033[31m";
