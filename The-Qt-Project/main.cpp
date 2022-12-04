@@ -2,8 +2,6 @@
 #include "window.h"
 #include <iostream>
 #include <string>
-#include <utility>
-
 using namespace std;
 
 template <typename TextObject>
@@ -42,7 +40,6 @@ int main(int argc, char *argv[])
     MainWindow window;
     window.resize(600, 550);
     window.show();
-    print("Hello World!");
     return QApplication::exec();
 
 }
