@@ -1,13 +1,24 @@
 #include <QApplication>
 #include "window.h"
-#include "io_util.h"
+#include <iostream>
 
-int main(int argc, char *argv[]) {
-    QApplication a(argc, argv);
-    MainWindow UI;
-    UI.show();
-    util_io::Print("Hello World!");
-    util_io::Print(123);
-    util_io::FileWrite("test.txt", "Hello World!");
+using namespace std;
+
+template <typename TextObject>
+void print(TextObject text, bool newLine = true, bool flush = false)
+{
+    cout << text;
+    if (newLine)
+        cout << endl;
+    if (flush)
+        cout.flush();
+}
+
+int main(int argc, char *argv[])
+{
+    QApplication app(argc, argv);
+    MainWindow window;
+    window.show();
+    print("Hello World!");
     return QApplication::exec();
 }
