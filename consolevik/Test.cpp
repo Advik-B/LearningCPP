@@ -1,14 +1,12 @@
 //
 // Created by Advik on 23/11/22.
 //
-#include "colors.cpp"
-#include "effects.cpp"
+#include "format.cpp"
 #include <iostream>
 
 using namespace std;
 int main()
 {
-    cout << colors::dye("Hello World", "red") << endl;
-    cout << effects::add_effect("Hello World", "bold") << endl;
+    cout << fmt::format("Hello World!", "on_green red", "underline") << endl;
     return 0;
 }
