@@ -2,6 +2,7 @@
 #include "window.h"
 #include <iostream>
 #include <string>
+#include <utility>
 
 using namespace std;
 
@@ -25,12 +26,23 @@ void display_arguments(int argc, char *argv[])
     }
 }
 
+template <typename ReturnType>
+ReturnType input(string prompt)
+{
+    ReturnType input;
+    print(&prompt, false);
+    cin >> input;
+    return input;
+}
+
 int main(int argc, char *argv[])
 {
     display_arguments(argc, argv);
     QApplication app(argc, argv);
     MainWindow window;
+    window.resize(600, 550);
     window.show();
     print("Hello World!");
     return QApplication::exec();
+
 }
