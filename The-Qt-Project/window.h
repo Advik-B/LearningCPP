@@ -3,6 +3,7 @@
 #include "QMenu"
 #include "QAction"
 #include "QMessageBox"
+#include "uiLoader.h"
 
 class Menu : public QMenuBar
 {
@@ -27,10 +28,9 @@ class Menu : public QMenuBar
             connect(aboutAction, &QAction::triggered, this, &Menu::about);
             connect(aboutQtAction, &QAction::triggered, this, &Menu::aboutQt);
 
-
         }
 
-        void about()
+        static void about()
         {
             auto msgBox = new QMessageBox();
             msgBox->setText("About");
@@ -54,9 +54,12 @@ class MainWindow : public QMainWindow
         MainWindow()
         {
             auto menu = new Menu();
-
             setMenuBar(menu);
-            setWindowTitle("MainUI");
-            resize(650, 600);
-        };
+            setWindowTitle("Simple App");
+            resize(650, 500);
+            UiLoader loader;
+            auto widget = loader.loadUi(":/UI/mainwindow.ui", this);
+            setCentralWidget(widget);
+            setFixedSize(size()); // Comment this line to make window resizable
+        }
 };
