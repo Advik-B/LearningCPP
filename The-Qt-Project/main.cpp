@@ -31,7 +31,6 @@ int main(int argc, char *argv[])
     display_arguments(argc, argv);
     QApplication app(argc, argv);
     MainWindow window;
-    window.resize(600, 550);
     window.show();
     return QApplication::exec();
 
