@@ -25,33 +25,6 @@ void display_arguments(int argc, char *argv[])
     }
 }
 
-template <typename ReturnType>
-ReturnType input(string prompt)
-{
-    ReturnType input;
-    print(&prompt, false);
-    cin >> input;
-    return input;
-}
-
-bool input(string prompt)
-{
-    string input;
-    print(&prompt, false);
-    cin >> input;
-    switch (input[0])
-    {
-        case 'T':
-        case 't':
-            return true;
-        case 'F':
-        case 'f':
-            return false;
-
-        default:
-            return false;
-    }
-}
 
 int main(int argc, char *argv[])
 {
