@@ -8,6 +8,7 @@ int main() {
         double width, height;
         cout << "Enter width and height: ";
         cin >> width >> height;
+        cout << "You entered " << width << " and " << height << endl;
         cout << "Area: " << width * height << endl;
         cout << "Continue? (y/n): ";
         cin >> selection;
